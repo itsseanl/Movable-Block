@@ -8,12 +8,12 @@ movable.forEach((elem) => {
 	let x;
 	let y;
 	elem.addEventListener("mousedown", function (e) {
-		console.log("mousedown");
+		e.preventDefault();
 		isMoving = true;
 	});
 
 	window.addEventListener("mousemove", function (e) {
-		console.log("mousemove");
+		e.preventDefault();
 		if (isMoving) {
 			//get current translateX and translateY values
 			let style = window.getComputedStyle(elem);
@@ -41,7 +41,7 @@ movable.forEach((elem) => {
 	});
 
 	window.addEventListener("mouseup", function (e) {
-		console.log("mouseup");
+		// console.log("mouseup");
 		isMoving = false;
 	});
 
